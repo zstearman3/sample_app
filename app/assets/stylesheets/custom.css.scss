@@ -143,10 +143,14 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
-.gravatr_edit {
+.gravatar_edit {
   margin-top: 15px;
+  img {
+    border-radius: 8px;
+  }
 }
 
 /* forms */
