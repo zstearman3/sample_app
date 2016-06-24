@@ -2,3 +2,9 @@ example:
   name: Rails Example
   email: rails@example.com
   password_digest: <%= User.digest('password') %>
+  
+snow:
+  name: Jon Snow
+  email: jon@nightswatch.com
+  password_digest: <%= User.digest('ygritte')
+  
