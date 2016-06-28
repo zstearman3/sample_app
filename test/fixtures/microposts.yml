@@ -21,3 +21,15 @@ micropost_<%= n %>:
   created_at: <%= 42.days.ago %>
   user: example
 <% end %>
+
+watch:
+  content: "I'm thinking about heading north to join the night's watch. Nothing going on here in Winterfell."
+  created_at: <%= 6.years.ago %>
+  user: snow
+  
+wedding:
+  content: "Cant wait for the Tully-Frey wedding!"
+  created_at: <%= 3.years.ago %>
+  user: stark
+  
+  
