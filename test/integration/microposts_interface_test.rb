@@ -33,8 +33,14 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
      delete micropost_path(first_micropost)
    end
    
-   #Visit different user (no delete links)
+   # Visit different user (no delete links)
    get user_path(users(:snow))
    assert_select 'a', text: 'delete', count: 0
+ end
+ 
+ test "micropost sidebar count" do
+  log_in_as(@user)
+  get root_path
+  assert_match "#{@user.microposts.count} microposts", response.body
  end
 end
