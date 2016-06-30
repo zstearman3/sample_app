@@ -85,4 +85,23 @@ class UserTest < ActiveSupport::TestCase
     snow.unfollow(stark)
     assert_not snow.following?(stark)
   end
+  
+  test "feed should have the right posts" do
+    example = users(:example)
+    #snow = users(:snow)
+    stark = users(:stark)
+    tyrion = users(:tyrion)
+    
+    stark.microposts.each do |post_following|
+      assert example.feed.include?(post_following)
+    end
+    
+    example.microposts.each do |post_self|
+      assert example.feed.include?(post_self)
+    end
+    
+    tyrion.microposts.each do |post_unfollowed|
+      assert_not example.feed.include?(post_unfollowed)
+    end
+  end
 end 
